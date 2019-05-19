@@ -4,4 +4,5 @@ export class AdrresRequest {
     City: string
     StateProvince: string
     Country: string
+    
 }
