@@ -1,0 +1,60 @@
+<section class="content" style="margin: 10% auto">
+
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <div class="col">
+      <select class='form-control' (change)="changeForm($event)" [(ngModel)]="formSelected">
+        <option *ngFor="let formType of formTypes" [ngValue]="formType.value">{{formType.name}}</option>
+      </select>
+    </div>
+    <div [ngSwitch]="nameForm" [@fadeToggle]="animate ? 'visivel' : 'invisivel'">
+      <div *ngSwitchCase="'loginForm'">
+        <div>
+          <b>Login</b>
+        </div>
+        <p>Por favor, efetue o login para continuar</p>
+        <form method="POST" novalidate #form="ngForm" (ngSubmit)="login(form)" class="needs-validation">
+          {{form.value | json}}
+          <app-input-container label="Email" errorMessage="Campo obrigatório">
+            <input type="text" name="email" ngModel class="form-control" placeholder="Email" required>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </app-input-container>
+          <app-input-container label="Senha" errorMessage="Campo obrigatório">
+            <input type="password" name="password" ngModel class="form-control" placeholder="Password" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </app-input-container>
+          <div class="row">
+            <div class="col-xs-offset-8 col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div *ngSwitchCase="'loginRegister'">
+       
+      </div>
+      <div *ngSwitchCase="'completeRegister'">
+       
+      </div>
+      <div *ngSwitchCase="'addressRegister'">
+        <div>
+          <b>Endereço</b>
+        </div>
+        <form>
+          <app-input-container label="Endereço" errorMessage="Campo obrigatório">
+            <input type="text" name="Endereco" ngModel class="form-control" placeholder="Endereço" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </app-input-container>
+          <app-input-container label="CEP" errorMessage="Campo obrigatório">
+            <input type="text" name="CEP" ngModel class="form-control" placeholder="CEP" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </app-input-container>
+        </form>
+      </div>
+      <div *ngSwitchCase="'petRegister'">
+        <b>Registre seu pet</b>
+      </div>
+
+    </div>
+
+  </div>
+</section>

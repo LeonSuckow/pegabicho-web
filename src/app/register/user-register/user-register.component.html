@@ -1,0 +1,16 @@
+<div>
+  <b>Cadastre-se</b>
+</div>
+<form #secondForm="ngForm" novalidate>
+  <app-input-container label="Email" errorMessage="Campo obrigatório">
+    <input type="text" name="email" ngModel class="form-control" placeholder="Email" required>
+    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  </app-input-container>
+  <app-input-container label="Senha" errorMessage="Campo obrigatório">
+    <input type="password" name="password" ngModel class="form-control" placeholder="Password" required>
+    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  </app-input-container>
+  <div class="col-xs-offset-8 col-xs-4">
+    <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
+  </div>
+</form>

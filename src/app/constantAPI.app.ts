@@ -1,0 +1,1 @@
+export const PegaBichoAPI = "http://pegabicho-api-dev.azurewebsites.net/api";

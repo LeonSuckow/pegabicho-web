@@ -1,0 +1,7 @@
+div.form-group.has-success input{
+    border-color: #28a745;
+}
+
+div.form-group.has-error input{
+    border-color: #dc3545;
+}
